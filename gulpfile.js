@@ -33,7 +33,7 @@ function jsTask(){
 }
 
 function imgsTask(){
-    return src('src/app/imgs/**/*')
+    return src('src/app/imgs/**/*', { encoding: false })
         .pipe(imagemin())
         .pipe(dest('dist/imgs'))
 }
