@@ -1,5 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head><title>Test</title></head>
-<body><h1>Привіт, світ!</h1></body>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій веб-проєкт</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+@@include('components/header.html')
+
+<main class="content">
+    <div class="container">
+        <h2>Основний контент сторінки</h2>
+        <p>Тут розміщується головна інформація.</p>
+    </div>
+</main>
+
+@@include('components/footer.html')
+
+<script src="js/main.min.js"></script>
+</body>
 </html>
