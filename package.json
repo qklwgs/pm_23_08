@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/qklwgs/pm_23_08#readme",
   "devDependencies": {
+    "bootstrap": "^5.3.8",
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.1",
     "gulp-concat": "^2.6.1",
@@ -28,8 +29,5 @@
     "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.104.0"
-  },
-  "dependencies": {
-    "bootstrap": "^5.3.8"
   }
 }
