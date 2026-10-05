@@ -61,6 +61,16 @@ function watchTask(){
     watch('src/app/imgs/**/*', series(imgsTask, browserSyncReloadTask));
 }
 
+function copyBootstrapCssTask(){
+    return src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+        .pipe(dest('dist/css'))
+}
+
+function copyBootstrapJsTask(){
+    return src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
+        .pipe(dest('dist/js'))
+}
+
 exports.html = htmlTask;
 exports.scss = scssTask;
 exports.js = jsTask;
@@ -68,7 +78,10 @@ exports.imgs = imgsTask;
 exports.browserSync = browserSyncTask;
 exports.watch = watchTask;
 
+exports.copyBootstrapCssTask = copyBootstrapCssTask;
+exports.copyBootstrapJsTask = copyBootstrapJsTask;
+
 exports.default = series(
-    parallel(htmlTask, scssTask, jsTask, imgsTask),
+    parallel(copyBootstrapCssTask, copyBootstrapJsTask, htmlTask, scssTask, jsTask, imgsTask),
     parallel(browserSyncTask, watchTask)
 )
