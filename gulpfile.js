@@ -40,8 +40,14 @@ function imgsTask(){
 
 function browserSyncTask(cb){
     browserSync.init({
-        server:{
-            baseDir: 'dist'
+        server: {
+            baseDir: 'dist',
+            middleware: function (req, res, next) {
+                res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+                res.setHeader('Pragma', 'no-cache');
+                res.setHeader('Expires', '0');
+                next();
+            }
         },
         port: 3000,
         notify: false,
