@@ -1,0 +1,36 @@
+$custom-color: #333333;
+
+.bg-custom-color{
+  background-color: $custom-color;
+}
+
+h1{
+  font-weight: 900;
+  font-size: 145px;
+}
+
+header.row{
+  margin-top: 100px;
+}
+
+h3{
+  font-size: 45px;
+}
+
+.name-container{
+  display: inline-block;
+  border-left: 105px solid $custom-color;
+}
+
+.photo-container{
+  display: inline-block;
+  border: 15px solid $custom-color;
+
+  img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
