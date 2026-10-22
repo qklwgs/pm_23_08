@@ -1,2 +1,17 @@
-@use"variables";
-@use"header";
+@use "variables" as *;
+@use "header";
+
+body{
+  font-family: $main-font;
+}
+
+*,
+*::before,
+*::after {
+  font-family: $main-font;
+}
+
+.main-color{
+  color:$main-color;
+}
+

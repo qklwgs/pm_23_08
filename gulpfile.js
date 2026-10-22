@@ -8,6 +8,7 @@ const concat = require('gulp-concat');
 
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
 
 function htmlTask(){
     return src('src/app/*.html')
@@ -19,9 +20,10 @@ function htmlTask(){
 }
 
 function scssTask(){
-    return src('src/app/scss/**/*.scss')
+    return src('src/app/scss/main.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cssnano())
+        .pipe(rename('index.min.css'))
         .pipe(dest('dist/css'));
 }
 
@@ -77,6 +79,16 @@ function copyBootstrapJsTask(){
         .pipe(dest('dist/js'))
 }
 
+function copyIconsCssTask(){
+    return src('node_modules/bootstrap-icons/font/bootstrap-icons.min.css')
+        .pipe(dest('dist/css'))
+}
+
+function copyIconsFontsTask(){
+    return src('node_modules/bootstrap-icons/font/fonts/*', { encoding: false })
+        .pipe(dest('dist/css/fonts'))
+}
+
 exports.html = htmlTask;
 exports.scss = scssTask;
 exports.js = jsTask;
@@ -86,8 +98,10 @@ exports.watch = watchTask;
 
 exports.copyBootstrapCssTask = copyBootstrapCssTask;
 exports.copyBootstrapJsTask = copyBootstrapJsTask;
+exports.copyIconsCssTask = copyIconsCssTask;
+exports.copyIconsFontsTask = copyIconsFontsTask;
 
 exports.default = series(
-    parallel(copyBootstrapCssTask, copyBootstrapJsTask, htmlTask, scssTask, jsTask, imgsTask),
+    parallel(copyBootstrapCssTask, copyBootstrapJsTask, copyIconsCssTask, copyIconsFontsTask, htmlTask, scssTask, jsTask, imgsTask),
     parallel(browserSyncTask, watchTask)
 )
