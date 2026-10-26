@@ -1,0 +1,9 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin section-padding($vertical: 48px, $horizontal: 54px) {
+  padding: $vertical $horizontal;
+}

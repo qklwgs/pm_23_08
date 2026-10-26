@@ -1,2 +1,10 @@
+@use 'variables' as v;
+@use 'mixins';
+@use 'components';
+@use 'header';
 
+body {
+  font-family: v.$font-main;
+  color: v.$main-color;
+}
 

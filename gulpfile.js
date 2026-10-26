@@ -80,7 +80,7 @@ function copyBootstrapJsTask(){
 }
 
 function copyIconsCssTask(){
-    return src('node_modules/bootstrap-icons/font/bootstrap-icons.min.css')
+    return src('node_modules/bootstrap-icons/font/bootstrap-icons.css')
         .pipe(dest('dist/css'))
 }
 

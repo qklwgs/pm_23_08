@@ -1,0 +1,100 @@
+@use 'sass:math';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components';
+
+.header-row {
+  margin-top: 100px;
+}
+
+.header-text-block {
+  position: relative;
+  padding: $gap $gap $gap ($bar-width + $gap);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $bar-width;
+    background: $main-color;
+  }
+}
+
+.name-title {
+  margin: 0;
+  font-size: $base-font * 9;
+  font-weight: 900;
+}
+
+.job-title {
+  margin: 0;
+  font-size: $base-font * 2.5;
+  font-weight: 400;
+}
+
+.photo-col {
+  padding-inline: $gap * 0.5;
+}
+
+.photo-frame-wrapper {
+  padding: $frame-width;
+  background: $main-color;
+
+  .photo-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  padding: $gap * 0.5;
+  background: $main-color;
+  color: $white;
+  font-size: $base-font * 1.25;
+  font-weight: 300;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.contact-title {
+  @extend %section-title;
+  color: $white;
+  margin-bottom: $gap * 1.1;
+}
+
+.contact-icon {
+  @extend %icon-box;
+  background: $white;
+  color: $main-color;
+
+  &--sm {
+    width: math.div($icon-size, 1.6);
+    height: math.div($icon-size, 1.6);
+    font-size: math.div($icon-size, 3);
+  }
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: $gap * 0.25;
+    line-height: 1.25;
+  }
+}

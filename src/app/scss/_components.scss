@@ -1,0 +1,26 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+%icon-box {
+  @include flex-center;
+  flex: 0 0 auto;
+  width: $icon-size;
+  height: $icon-size;
+  background: $main-color;
+  color: $white;
+  font-size: $icon-size * 0.6;
+}
+
+%section-title {
+  display: flex;
+  align-items: center;
+  gap: $gap * 0.3;
+  margin-bottom: $gap * 0.8;
+  font-size: $base-font * 3;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $main-color;
+}
+
+.icon-box { @extend %icon-box; }
+.section-title { @extend %section-title; }
