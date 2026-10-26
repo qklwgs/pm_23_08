@@ -1,0 +1,45 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components';
+
+.sidebar {
+  @include section-padding($gap * 0.8, $gap * 0.9);
+  background: $light-bg;
+  padding-left: $bar-width * 1.2;
+
+  p {
+    font-size: $base-font * 1.8;
+  }
+
+  .skill {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $gap * 0.2;
+
+    span {
+      font-weight: 700;
+      font-size: $base-font * 1.8;
+    }
+
+    .progress {
+      width: 45%;
+      height: 15px;
+      border-radius: 0;
+      background: $white;
+      border: 1px solid $main-color;
+    }
+
+    .progress-bar {
+      background: $main-color;
+    }
+  }
+
+  .lang-btn {
+    padding: $gap * 0.3 $gap * 0.6;
+    font-size: $base-font * 1.25;
+    border-width: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

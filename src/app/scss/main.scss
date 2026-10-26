@@ -2,6 +2,7 @@
 @use 'mixins';
 @use 'components';
 @use 'header';
+@use 'sidebar';
 
 body {
   font-family: v.$font-main;

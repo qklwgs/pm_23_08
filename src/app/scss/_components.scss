@@ -24,3 +24,9 @@
 
 .icon-box { @extend %icon-box; }
 .section-title { @extend %section-title; }
+
+.block {
+  padding-bottom: $gap * 0.5;
+  margin-bottom: $gap * 0.5;
+  border-bottom: 2px solid $main-color;
+}
