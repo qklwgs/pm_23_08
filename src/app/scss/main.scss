@@ -3,9 +3,11 @@
 @use 'components';
 @use 'header';
 @use 'sidebar';
+@use 'content';
 
 body {
   font-family: v.$font-main;
+  font-size: v.$text-size;
   color: v.$main-color;
 }
 

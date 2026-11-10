@@ -29,4 +29,19 @@
   padding-bottom: $gap * 0.5;
   margin-bottom: $gap * 0.5;
   border-bottom: 2px solid $main-color;
+
+  &:last-child {
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
 }
+
+.item-title {
+  margin: 0;
+  font-size: $text-size * 1.1;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+

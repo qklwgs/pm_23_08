@@ -1,0 +1,33 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components';
+
+.content {
+  @include section-padding($gap * 0.8, $gap * 0.9);
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+
+  .reference {
+    margin-bottom: $gap * 0.4;
+    line-height: 1.5;
+  }
+
+  .job {
+    margin-bottom: $gap * 0.5;
+
+    p { margin: 0; }
+
+    time { font-weight: 400; }
+
+    .job-company {
+      font-style: italic;
+      margin-bottom: $gap * 0.1;
+    }
+
+    .job-desc {
+      font-size: $text-size * 0.85;
+    }
+  }
+
+}

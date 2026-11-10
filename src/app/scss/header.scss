@@ -80,8 +80,8 @@
   color: $main-color;
 
   &--sm {
-    width: math.div($icon-size, 1.6);
-    height: math.div($icon-size, 1.6);
+    width: auto;
+    height: auto;
     font-size: math.div($icon-size, 3);
   }
 }

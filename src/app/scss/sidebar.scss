@@ -4,12 +4,10 @@
 
 .sidebar {
   @include section-padding($gap * 0.8, $gap * 0.9);
+  display: flex;
+  flex-direction: column;
   background: $light-bg;
   padding-left: $bar-width * 1.2;
-
-  p {
-    font-size: $base-font * 1.8;
-  }
 
   .skill {
     display: flex;
